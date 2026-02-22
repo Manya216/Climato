@@ -13,61 +13,126 @@ body {
     background: linear-gradient(to bottom, #74ebd5, #ACB6E5);
     transition: background 0.5s ease;
 }
-container {
+
+.container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px 40px;
     border-radius: 12px;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
     width: 90%;
-    max-width: 400px;
+    max-width: 450px;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
+h1 { margin-bottom: 20px; color: #333; }
 
 .search-box {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    gap: 5px;
 }
+
 .search-box input {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    width: 70%;
+    width: 60%;
 }
 
 .search-box button {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border: none;
     background-color: #4caf50;
     color: white;
     cursor: pointer;
-    border-radius: 0 8px 8px 0;
-    transition: background 0.3s;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
+#locationBtn { background-color: #2196F3; }
+.search-box button:hover { opacity: 0.8; }
 
-.search-box button:hover {
-    background-color: #45a049;
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .weather-card {
     margin-top: 20px;
     padding: 20px;
     border-radius: 12px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid #ddd;
 }
 
-.hidden {
-    display: none;
+.hidden { display: none; }
+
+.error-msg {
+    color: #d9534f;
+    margin-top: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* ... Keep your existing CSS and add this at the bottom ... */
+
+.container {
+    max-width: 550px; /* Made slightly wider to fit forecast */
 }
 
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.forecast-card {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 80px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.forecast-card img {
+    width: 40px;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
 .error-msg {
     color: red;
     margin-top: 10px;
+
 }
