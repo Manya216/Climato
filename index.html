@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
+    <title>Weather Dashboard Pro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -12,17 +13,28 @@
         <div class="search-box">
             <input type="text" id="cityInput" placeholder="Enter city name">
             <button id="searchBtn">Search</button>
+            <button id="locationBtn" title="Use Current Location"><i class="fas fa-location-dot"></i></button>
         </div>
+
+        <div id="loader" class="loader hidden"></div>
+
         <div id="weatherCard" class="weather-card hidden">
             <h2 id="cityName"></h2>
-            <p id="weatherDesc"></p>
-            <p>Temperature: <span id="temp"></span>°C</p>
-            <p>Humidity: <span id="humidity"></span>%</p>
-            <p>Wind Speed: <span id="wind"></span> m/s</p>
+            <p id="weatherDesc" style="text-transform: capitalize; font-style: italic;"></p>
+            <div class="details">
+                <p>Temp: <span id="temp"></span>°C</p>
+                <p>Humidity: <span id="humidity"></span>%</p>
+            </div>
             <img id="weatherIcon" src="" alt="Weather Icon">
+            
+            <hr>
+            <h3>5-Day Forecast</h3>
+            <div id="forecastContainer" class="forecast-container"></div>
         </div>
+        
         <p id="errorMsg" class="error-msg"></p>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
